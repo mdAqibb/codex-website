@@ -5,6 +5,7 @@ import Hero from './components/Hero';
 import Team from './components/Team';
 import ContactUs from './components/ContactUs';
 import Footer from './components/Footer';
+import ParticleBackground from './components/ParticleBackground';
 
 const App = () => {
 
@@ -45,6 +46,7 @@ const App = () => {
 
   return (
     <div>
+      <ParticleBackground />
       {!isLanding && <Navbar />}
       <Hero isLanding={isLanding} onClick={handleInteraction} />
 

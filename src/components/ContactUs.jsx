@@ -43,64 +43,66 @@ const ContactUs = () => {
     };
 
     return (
-        <section className="section" id="contact" style={{ paddingBottom: '5rem' }}>
+        <section className="section" id="contact">
             <h2 className="section-header">CONTACT US</h2>
-            <div className="section-content" style={{ maxWidth: '600px', margin: '2rem auto' }}>
+            <div className="contact-container">
+                <div className="contact-info">
+                    <h3>Get in Touch</h3>
+                    <p>Have questions or want to collaborate? Send us a message and we'll get back to you as soon as possible.</p>
+                </div>
                 <form onSubmit={handleSubmit} className="contact-form">
-                    <div className="form-group">
-                        <input
-                            type="text"
-                            name="name"
-                            placeholder="Your Name"
-                            value={formData.name}
-                            onChange={handleChange}
-                            required
-                        />
+                    <div className="form-grid">
+                        <div className="form-group">
+                            <label htmlFor="name">Full Name</label>
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                placeholder="Enter your name"
+                                value={formData.name}
+                                onChange={handleChange}
+                                required
+                            />
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="email">Email Address</label>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="Enter your email"
+                                value={formData.email}
+                                onChange={handleChange}
+                                required
+                            />
+                        </div>
                     </div>
                     <div className="form-group">
-                        <input
-                            type="email"
-                            name="email"
-                            placeholder="Your Email"
-                            value={formData.email}
-                            onChange={handleChange}
-                            required
-                        />
-                    </div>
-                    <div className="form-group">
+                        <label htmlFor="message">Message</label>
                         <textarea
+                            id="message"
                             name="message"
-                            placeholder="Your Message"
+                            placeholder="How can we help?"
                             rows="5"
                             value={formData.message}
                             onChange={handleChange}
                             required
                         ></textarea>
                     </div>
-                    <div className="captcha-container">
-                        <label>{captcha.q}</label>
+                    <div className="captcha-wrapper">
+                        <label>Security Check: {captcha.q}</label>
                         <input
                             type="number"
-                            placeholder="Answer"
+                            placeholder="?"
                             value={userCaptcha}
                             onChange={(e) => setUserCaptcha(e.target.value)}
                             required
                         />
                     </div>
-                    <button type="submit" className="submit-btn" style={{
-                        marginTop: '1rem',
-                        padding: '0.8rem 2rem',
-                        background: '#d20000',
-                        color: 'white',
-                        border: 'none',
-                        cursor: 'pointer',
-                        fontFamily: '"Doto", sans-serif',
-                        fontSize: '1rem',
-                        transition: 'background 0.3s ease'
-                    }}>
+                    <button type="submit" className="submit-btn">
                         Send Message
                     </button>
-                    {status && <p style={{ marginTop: '1rem', color: status.includes('success') ? '#4caf50' : '#f44336' }}>{status}</p>}
+                    {status && <div className={`status-msg ${status.includes('success') ? 'success' : 'error'}`}>{status}</div>}
                 </form>
             </div>
         </section>
