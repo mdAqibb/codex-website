@@ -48,17 +48,17 @@ const Hero = ({ isLanding, onClick }) => {
                         pointerEvents: isLanding ? 'none' : 'auto'
                     }}
                 >
-                    CodeX
+                    Code<span style={{ color: '#d20000' }}>{'{'}</span>x<span style={{ color: '#d20000' }}>{'}'}</span>
                 </h1>
 
                 <div
                     className="programming-club"
                     style={{
                         opacity: isLanding ? 0 : 1,
-                        maxHeight: isLanding ? '0' : '3.5rem',
+                        maxHeight: isLanding ? '0' : '4rem',
                         overflow: 'hidden',
                         fontFamily: '"Bruno Ace", sans-serif',
-                        fontSize: 'clamp(1rem, 3.8vw, 1.5rem)',
+                        fontSize: 'clamp(1.5rem, 5vw, 2.5rem)',
                         color: '#d20000',
                         transform: isLanding ? 'translateY(20px)' : 'translateY(0)',
                         transition: 'max-height 0.8s ease-out 0.2s, opacity 0.8s ease-out 0.2s, transform 0.8s ease-out 0.2s',

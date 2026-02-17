@@ -707,6 +707,11 @@ p {
   }
 }
 
+/* Adjust Hero for fixed Navbar */
+.hero {
+  padding-top: 80px;
+}
+
 /* Parallax Effect Layers */
 .hero,
 .section,
@@ -732,6 +737,7 @@ body::before {
 }
 
 @media (max-width: 767px) {
+
   .hero,
   .section,
   .footer-main,
