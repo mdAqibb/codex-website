@@ -3,6 +3,7 @@ import './App.css';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Team from './components/Team';
+import ContactUs from './components/ContactUs';
 import Footer from './components/Footer';
 
 const App = () => {
@@ -83,6 +84,8 @@ const App = () => {
               anim id est laborum.
             </p>
           </div>
+
+          <ContactUs />
 
           <Footer />
         </>

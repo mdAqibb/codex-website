@@ -51,6 +51,23 @@ const Hero = ({ isLanding, onClick }) => {
                     CodeX
                 </h1>
 
+                <div
+                    className="programming-club"
+                    style={{
+                        opacity: isLanding ? 0 : 1,
+                        maxHeight: isLanding ? '0' : '50px',
+                        overflow: 'hidden',
+                        fontFamily: '"Bruno Ace", sans-serif',
+                        fontSize: '1.5rem',
+                        color: '#d20000',
+                        transform: isLanding ? 'translateY(20px)' : 'translateY(0)',
+                        transition: 'max-height 0.8s ease-out 0.2s, opacity 0.8s ease-out 0.2s, transform 0.8s ease-out 0.2s',
+                        pointerEvents: 'none'
+                    }}
+                >
+                    The Programming Club
+                </div>
+
                 <p
                     className={`hero-content ${!isLanding ? 'all-decoded' : ''}`}
                     style={{
@@ -60,8 +77,8 @@ const Hero = ({ isLanding, onClick }) => {
                 >
                     <DecryptedText
                         text="Code. "
-                        speed={100}
-                        maxIterations={10}
+                        speed={50}
+                        maxIterations={5}
                         className="inline-block revealed-on-hover"
                         autoStart={true}
                         onScrambleComplete={() => setVisibleIndex(prev => Math.max(prev, 1))}
@@ -69,8 +86,8 @@ const Hero = ({ isLanding, onClick }) => {
                     {visibleIndex >= 1 && (
                         <DecryptedText
                             text="Create. "
-                            speed={100}
-                            maxIterations={10}
+                            speed={50}
+                            maxIterations={5}
                             className="inline-block revealed-on-hover"
                             autoStart={true}
                             onScrambleComplete={() => setVisibleIndex(prev => Math.max(prev, 2))}
@@ -79,18 +96,8 @@ const Hero = ({ isLanding, onClick }) => {
                     {visibleIndex >= 2 && (
                         <DecryptedText
                             text="Innovate. "
-                            speed={100}
-                            maxIterations={10}
-                            className="inline-block revealed-on-hover"
-                            autoStart={true}
-                            onScrambleComplete={() => setVisibleIndex(prev => Math.max(prev, 3))}
-                        />
-                    )}
-                    {visibleIndex >= 3 && (
-                        <DecryptedText
-                            text="Xplore;"
-                            speed={100}
-                            maxIterations={10}
+                            speed={50}
+                            maxIterations={5}
                             className="inline-block revealed-on-hover"
                             autoStart={true}
                         />

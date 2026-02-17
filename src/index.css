@@ -395,3 +395,77 @@ p {
 .revealed-on-hover:hover {
   color: #ffffff;
 }
+
+/* Contact Form Styles */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background: rgba(255, 255, 255, 0.02);
+  padding: 2.5rem;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.form-group input,
+.form-group textarea,
+.captcha-container input {
+  width: 100%;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+  border-radius: 8px;
+  font-family: 'Inter', sans-serif;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.captcha-container input:focus {
+  outline: none;
+  border-color: #d20000;
+  box-shadow: 0 0 10px rgba(210, 0, 0, 0.3);
+}
+
+.captcha-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: #b1afaf;
+}
+
+.captcha-container label {
+  white-space: nowrap;
+}
+
+.captcha-container input {
+  width: 100px;
+}
+
+.submit-btn:hover {
+  background: #b10000 !important;
+}
+
+/* Parallax Effect Layers */
+.hero, .section, .footer-main {
+  position: relative;
+  z-index: 2;
+  transform: translate(calc((var(--mouse-x, 0px) - 50vw) * 0.01), calc((var(--mouse-y, 0px) - 50vh) * 0.01));
+  transition: transform 0.1s ease-out;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: -10%;
+  left: -10%;
+  width: 120%;
+  height: 120%;
+  background: radial-gradient(circle at 50% 50%, #1a1a1a 0%, #141414 100%);
+  z-index: -1;
+  transform: translate(calc((var(--mouse-x, 0px) - 50vw) * -0.02), calc((var(--mouse-y, 0px) - 50vh) * -0.02));
+  transition: transform 0.1s ease-out;
+  pointer-events: none;
+}
