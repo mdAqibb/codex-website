@@ -5,7 +5,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #141414;
+  background-color: transparent;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -32,8 +32,9 @@
 }
 
 
-body {
-  background-color: #141414;
+body,
+html {
+  background-color: transparent !important;
   color: #f2f2f2;
   min-height: 100vh;
 }
@@ -563,7 +564,7 @@ body::before {
   width: 120%;
   height: 120%;
   background: radial-gradient(circle at 50% 50%, #1a1a1a 0%, #141414 100%);
-  z-index: -1;
+  z-index: -2;
   transform: translate(calc((var(--mouse-x, 0px) - 50vw) * -0.02), calc((var(--mouse-y, 0px) - 50vh) * -0.02));
   transition: transform 0.1s ease-out;
   pointer-events: none;
