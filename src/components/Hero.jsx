@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import DecryptedText from './DecryptedText';
-import LaserFlow from './LaserFlow';
 
 const Hero = ({ isLanding, onClick }) => {
     const [visibleIndex, setVisibleIndex] = useState(0);
@@ -13,9 +12,10 @@ const Hero = ({ isLanding, onClick }) => {
             style={{
                 position: 'relative',
                 overflow: 'hidden',
-                height: isLanding ? '100vh' : '95vh',
+                minHeight: isLanding ? '100svh' : '85svh',
+                height: 'auto',
                 cursor: isLanding ? 'pointer' : 'default',
-                transition: 'height 0.5s ease-in-out'
+                transition: 'min-height 0.5s ease-in-out'
             }}
         >
             {/* <LaserFlow
@@ -40,7 +40,7 @@ const Hero = ({ isLanding, onClick }) => {
                     className="CodeX"
                     style={{
                         opacity: isLanding ? 0 : 1,
-                        maxHeight: isLanding ? '0' : '300px', // Approximate height for 10rem text + margins
+                        maxHeight: isLanding ? '0' : '18rem',
                         margin: '0', // Remove default h1 margins completely
                         overflow: 'hidden',
                         transform: isLanding ? 'translateY(20px)' : 'translateY(0)',
@@ -55,10 +55,10 @@ const Hero = ({ isLanding, onClick }) => {
                     className="programming-club"
                     style={{
                         opacity: isLanding ? 0 : 1,
-                        maxHeight: isLanding ? '0' : '50px',
+                        maxHeight: isLanding ? '0' : '3.5rem',
                         overflow: 'hidden',
                         fontFamily: '"Bruno Ace", sans-serif',
-                        fontSize: '1.5rem',
+                        fontSize: 'clamp(1rem, 3.8vw, 1.5rem)',
                         color: '#d20000',
                         transform: isLanding ? 'translateY(20px)' : 'translateY(0)',
                         transition: 'max-height 0.8s ease-out 0.2s, opacity 0.8s ease-out 0.2s, transform 0.8s ease-out 0.2s',
@@ -124,4 +124,3 @@ const Hero = ({ isLanding, onClick }) => {
 };
 
 export default Hero;
-
