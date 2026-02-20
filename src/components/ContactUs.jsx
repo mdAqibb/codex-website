@@ -39,7 +39,7 @@ const ContactUs = () => {
         setStatus('Sending...');
 
         try {
-            const response = await fetch("https://formsubmit.co/ajax/codex@woxsen.edu.in", {
+            const response = await fetch("https://formsubmit.co/ajax/705b7934cb74480a8a79ac378f81fa0d", {
                 method: "POST",
                 headers: {
                     'Content-Type': 'application/json',
