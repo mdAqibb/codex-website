@@ -3,48 +3,56 @@ import DecryptedText from './DecryptedText';
 
 const Hero = ({ isLanding, onClick }) => {
     const [visibleIndex, setVisibleIndex] = useState(0);
+    const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
+    const handleMouseMove = (e) => {
+        if (isLanding) return;
+        const { clientX, clientY } = e;
+        const { innerWidth, innerHeight } = window;
+        const x = (clientX / innerWidth - 0.5) * 20; // 20px max shift
+        const y = (clientY / innerHeight - 0.5) * 20;
+        setMousePos({ x, y });
+    };
 
     return (
         <div
             className="hero"
             onClick={onClick}
+            onMouseMove={handleMouseMove}
+            onMouseLeave={() => setMousePos({ x: 0, y: 0 })}
             style={{
                 position: 'relative',
                 overflow: 'hidden',
-                minHeight: isLanding ? '100svh' : '85svh',
+                minHeight: '100svh',
                 height: 'auto',
                 cursor: isLanding ? 'pointer' : 'default',
-                transition: 'min-height 0.5s ease-in-out'
+                transition: 'min-height 0.5s ease-in-out, padding 0.5s ease-in-out',
+                padding: '0 1rem',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                alignItems: 'center'
             }}
         >
-            {/* <LaserFlow
-                style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
-                color="#ed333b"
-                wispDensity={0.6}
-                flowSpeed={0.05}
-                verticalSizing={0.5}
-                horizontalSizing={0.4}
-                fogIntensity={0.45}
-                fogScale={0.6}
-                wispSpeed={15}
-                wispIntensity={5}
-                flowStrength={0.25}
-                decay={1.1}
-                horizontalBeamOffset={0}
-                verticalBeamOffset={-0.4}
-            // color="#8b1319"
-            /> */}
-            <div style={{ position: 'relative', zIndex: 1, textAlign: 'center', width: '100%' }}>
+            <div style={{
+                position: 'relative',
+                zIndex: 1,
+                textAlign: 'center',
+                width: '100%',
+                transform: `translate3d(${mousePos.x}px, ${mousePos.y}px, 0)`,
+                transition: 'transform 0.1s ease-out'
+            }}>
                 <h1
                     className="CodeX"
                     style={{
                         opacity: isLanding ? 0 : 1,
                         maxHeight: isLanding ? '0' : '18rem',
-                        margin: '0', // Remove default h1 margins completely
+                        margin: '0',
                         overflow: 'hidden',
-                        transform: isLanding ? 'translateY(20px)' : 'translateY(0)',
-                        transition: 'max-height 0.8s ease-out, opacity 0.8s ease-out, margin 0.8s ease-out, transform 0.8s ease-out',
+                        transform: isLanding ? 'translateY(20px)' : `translate3d(${mousePos.x * 0.5}px, ${mousePos.y * 0.5}px, 0)`,
+                        transition: isLanding
+                            ? 'max-height 0.8s ease-out, opacity 0.8s ease-out, margin 0.8s ease-out, transform 0.8s ease-out'
+                            : 'max-height 0.8s ease-out, opacity 0.8s ease-out, margin 0.8s ease-out, transform 0.1s ease-out',
                         pointerEvents: isLanding ? 'none' : 'auto'
                     }}
                 >
@@ -60,8 +68,10 @@ const Hero = ({ isLanding, onClick }) => {
                         fontFamily: '"Bruno Ace", sans-serif',
                         fontSize: 'clamp(1.5rem, 5vw, 2.5rem)',
                         color: '#d20000',
-                        transform: isLanding ? 'translateY(20px)' : 'translateY(0)',
-                        transition: 'max-height 0.8s ease-out 0.2s, opacity 0.8s ease-out 0.2s, transform 0.8s ease-out 0.2s',
+                        transform: isLanding ? 'translateY(20px)' : `translate3d(${mousePos.x * 0.2}px, ${mousePos.y * 0.2}px, 0)`,
+                        transition: isLanding
+                            ? 'max-height 0.8s ease-out 0.2s, opacity 0.8s ease-out 0.2s, transform 0.8s ease-out 0.2s'
+                            : 'max-height 0.8s ease-out, opacity 0.8s ease-out, transform 0.1s ease-out',
                         pointerEvents: 'none'
                     }}
                 >
@@ -73,12 +83,13 @@ const Hero = ({ isLanding, onClick }) => {
                     style={{
                         marginTop: isLanding ? '0' : '1rem',
                         transition: 'margin-top 0.8s ease-out',
-                        animation: 'fadeInSlow 2s ease-out forwards'
+                        animation: 'fadeInSlow 2s ease-out forwards',
+                        transform: `translate3d(${mousePos.x * -0.1}px, ${mousePos.y * -0.1}px, 0)`
                     }}
                 >
                     <DecryptedText
                         text="Code. "
-                        speed={50}
+                        speed={40}
                         maxIterations={5}
                         className="inline-block revealed-on-hover"
                         autoStart={true}
@@ -87,7 +98,7 @@ const Hero = ({ isLanding, onClick }) => {
                     {visibleIndex >= 1 && (
                         <DecryptedText
                             text="Create. "
-                            speed={50}
+                            speed={40}
                             maxIterations={5}
                             className="inline-block revealed-on-hover"
                             autoStart={true}
@@ -97,7 +108,7 @@ const Hero = ({ isLanding, onClick }) => {
                     {visibleIndex >= 2 && (
                         <DecryptedText
                             text="Innovate. "
-                            speed={50}
+                            speed={40}
                             maxIterations={5}
                             className="inline-block revealed-on-hover"
                             autoStart={true}
@@ -108,16 +119,18 @@ const Hero = ({ isLanding, onClick }) => {
                     className="hero-social-icons"
                     style={{
                         opacity: isLanding ? 0 : 1,
-                        transform: isLanding ? 'translateY(20px)' : 'translateY(0)',
-                        transition: 'opacity 0.8s ease-out 0.2s, transform 0.8s ease-out 0.2s', // Added delay for staggered effect
+                        transform: isLanding ? 'translateY(20px)' : `translate3d(${mousePos.x * 0.8}px, ${mousePos.y * 0.8}px, 0)`,
+                        transition: isLanding
+                            ? 'opacity 0.8s ease-out 0.2s, transform 0.8s ease-out 0.2s'
+                            : 'opacity 0.8s ease-out, transform 0.1s ease-out',
                         pointerEvents: isLanding ? 'none' : 'auto',
                         display: 'flex'
                     }}
                 >
-                    <a href="#"><i className="fa fa-instagram"></i></a>
-                    <a href="#"><i className="fa fa-linkedin-square"></i></a>
-                    <a href="#"><i className="fa fa-github"></i></a>
-                    <a href="#"><i className="fa fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/codex_wou" target="_blank" rel="noopener noreferrer"><i className="fa fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/company/codex-wou" target="_blank" rel="noopener noreferrer"><i className="fa fa-linkedin-square"></i></a>
+                    <a href="https://github.com/CODEX-WoU/" target="_blank" rel="noopener noreferrer"><i className="fa fa-github"></i></a>
+                    <a href="https://x.com/CodeX_WOU" target="_blank" rel="noopener noreferrer"><i className="fa fa-twitter"></i></a>
                 </div>
             </div>
         </div>

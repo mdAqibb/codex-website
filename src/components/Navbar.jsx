@@ -53,8 +53,8 @@ const Navbar = () => {
             <ul id="site-navigation" className={`nav-links${isOpen ? ' open' : ''}`}>
                 <li><a href="#" onClick={handleLinkClick}><span className="opening_flower">{`{`}</span> HOME <span className="closing_flower">{`}`}</span></a></li>
                 <li><a href="#about" onClick={handleLinkClick}><span className="opening_flower">{`{`}</span> ABOUT <span className="closing_flower">{`}`}</span></a></li>
-                <li><a href="#team" onClick={handleLinkClick}><span className="opening_flower">{`{`}</span> TEAM <span className="closing_flower">{`}`}</span></a></li>
                 <li><a href="#events" onClick={handleLinkClick}><span className="opening_flower">{`{`}</span> EVENTS <span className="closing_flower">{`}`}</span></a></li>
+                <li><a href="#team" onClick={handleLinkClick}><span className="opening_flower">{`{`}</span> TEAM <span className="closing_flower">{`}`}</span></a></li>
                 <li><a href="#contact" onClick={handleLinkClick}><span className="opening_flower">{`{`}</span> CONTACT US <span className="closing_flower">{`}`}</span></a></li>
             </ul>
         </nav>

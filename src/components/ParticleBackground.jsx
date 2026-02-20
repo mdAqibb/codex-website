@@ -10,7 +10,7 @@ const ParticleBackground = ({ isVisible }) => {
 
         const particles = [];
         const particleCount = 100;
-        const connectionDistance = 150;
+        const connectionDistance = 110;
         const mouse = { x: null, y: null, radius: 150 };
 
         const resizeCanvas = () => {
@@ -88,8 +88,8 @@ const ParticleBackground = ({ isVisible }) => {
                     const distance = Math.sqrt(dx * dx + dy * dy);
 
                     if (distance < connectionDistance) {
-                        ctx.strokeStyle = p.color === '#d20000' ? 'rgba(210, 0, 0, 0.2)' : 'rgba(255, 255, 255, 0.1)';
-                        ctx.lineWidth = 0.5;
+                        ctx.strokeStyle = p.color === '#d20000' ? 'rgba(210, 0, 0, 0.4)' : 'rgba(255, 255, 255, 0.2)';
+                        ctx.lineWidth = 0.8;
                         ctx.beginPath();
                         ctx.moveTo(p.x, p.y);
                         ctx.lineTo(particles[j].x, particles[j].y);
@@ -120,7 +120,7 @@ const ParticleBackground = ({ isVisible }) => {
                 height: '100vh',
                 zIndex: -1,
                 pointerEvents: 'none',
-                opacity: isVisible ? 0.6 : 0,
+                opacity: isVisible ? 0.65 : 0,
                 transition: 'opacity 1s ease-in-out'
             }}
         />

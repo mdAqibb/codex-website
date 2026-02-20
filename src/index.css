@@ -205,7 +205,7 @@ p {
   justify-content: center;
   align-items: center;
   min-height: 80vh;
-  padding: clamp(4.5rem, 10vw, 6rem) 1rem 3rem;
+  padding: 0 1rem;
   text-align: center;
 }
 
@@ -251,6 +251,7 @@ p {
 .section-header {
   font-size: clamp(2.2rem, 6vw, 4rem);
   text-align: center;
+  font-weight: bold;
 }
 
 .section-content {
@@ -265,7 +266,7 @@ p {
 .footer-main {
   display: grid;
   justify-items: center;
-  margin-bottom: 3rem;
+  width: 100%;
 }
 
 .footer-icons {
@@ -273,7 +274,6 @@ p {
   justify-content: center;
   gap: 1.5rem;
   margin-top: 1rem;
-  margin-bottom: 3rem;
 }
 
 /* Team Section Grid */
@@ -334,14 +334,14 @@ p {
 }
 
 .card-image {
-  width: clamp(5.5rem, 18vw, 7.5rem);
-  height: clamp(5.5rem, 18vw, 7.5rem);
+  width: clamp(8rem, 25vw, 11rem);
+  height: clamp(8rem, 25vw, 11rem);
   margin: 0 auto 1.5rem;
   border-radius: 50%;
   overflow: hidden;
-  border: 2px solid #333;
-  padding: 0.6rem;
-  background: rgba(0, 0, 0, 0.2);
+  border: 3px solid #d20000;
+  padding: 0;
+  background: #000;
   position: relative;
   z-index: 1;
 }
@@ -349,7 +349,7 @@ p {
 .card-image img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 .team-card h3 {
@@ -381,7 +381,7 @@ p {
 
 .team-card .social-links a {
   color: #fff;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   transition: color 0.3s ease;
 }
 
@@ -393,6 +393,7 @@ p {
   font-size: clamp(1.4rem, 4vw, 2rem);
   text-align: center;
   margin-top: clamp(2.25rem, 6vw, 3rem);
+  font-weight: bold;
 }
 
 /* Leadership Section */
@@ -608,7 +609,7 @@ p {
   }
 }
 
-<<<<<<< HEAD @media (min-width: 768px) {
+@media (min-width: 768px) {
   #navthing {
     padding: 1rem 1.5rem;
   }
