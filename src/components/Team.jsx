@@ -10,13 +10,13 @@ const Team = () => {
         { name: "Ganesh", quote: "I am still thinking about a catchphrase..", linkedin: "https://www.linkedin.com/in/sai-ganesha-munagari/", github: "https://github.com/gunsai75", image: "/assets/team/5core.JPG" },
         { name: "Sudarshan", quote: "Building intelligent systems. Breaking normal limits.", linkedin: "https://in.linkedin.com/in/sudarshanmaddi", github: "https://github.com/suddhumaddi", image: "/assets/team/6core.JPG" },
         { name: "Monish", quote: "Logic on the Board. Vision in the Code.", linkedin: "https://www.linkedin.com/in/monishrithvik?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", github: "https://github.com/MonishRithvik", image: "/assets/team/7core.JPG" },
-        { name: "Adeeb", quote: "404 : Social Life not Found.", linkedin: "", github: "", image: "/assets/team/8core.JPG" },
-        { name: "Vennela", quote: "I am still thinking about a catchphrase..", linkedin: "linkedin.com/in/vennela-linga-ab48b630b", github: "github.com/LINGAVENNELA", image: "/assets/team/9core.JPG" },
+        { name: "Adeeb", quote: "404 : Social Life not Found.", linkedin: "https://www.linkedin.com/in/adeebehtesham?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", github: "https://github.com/IAmTroj4n", image: "/assets/team/8core.JPG" },
+        { name: "Vennela", quote: "Where Logic meets Leadership.", linkedin: "linkedin.com/in/vennela-linga-ab48b630b", github: "github.com/LINGAVENNELA", image: "/assets/team/9core.JPG" },
     ];
 
     const executives = [
-        { name: "Sufiyan", quote: "We don't discuss the future, We prototype it.", linkedin: "www.linkedin.com/in/mohd-sufiyan-naveed", github: "https://github.com/MSN-2007", image: "/assets/team/1exec.JPG" },
-        { name: "Saachi", quote: "I am still thinking about a catchphrase..", linkedin: "https://www.linkedin.com/in/saachi-patrao-6a542a30a/", github: "https://github.com/saachix", image: "/assets/team/2exec.JPG" },
+        { name: "Sufiyan", quote: "We don't discuss the future, We prototype it.", linkedin: "https://www.linkedin.com/in/mohd-sufiyan-naveed", github: "https://github.com/MSN-2007", image: "/assets/team/1exec.JPG" },
+        { name: "Saachi", quote: "Thinking in 4K", linkedin: "https://www.linkedin.com/in/saachi-patrao-6a542a30a/", github: "https://github.com/saachix", image: "/assets/team/2exec.JPG" },
         { name: "Parth", quote: "Precision Over Hype", linkedin: "https://www.linkedin.com/in/parthbajaj29?utm_source=share_via&utm_content=profile&utm_medium=member_android", github: "", image: "/assets/team/3exec.JPG" },
         { name: "Levin", quote: "Building smart solutions, one line at a time.", linkedin: "https://www.linkedin.com/in/levin-josewell-kadasi-286917381?utm_source=share_via&utm_content=profile&utm_medium=member_android", github: "github.com/levinjosewell", image: "/assets/team/4exec.JPG" },
         { name: "Chandrahas", quote: "White hat mindset in a black tie suit.", linkedin: "https://www.linkedin.com/in/chandrahas-thunga?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", github: "https://github.com/CodeInfinity08", image: "/assets/team/5exec.JPG" },

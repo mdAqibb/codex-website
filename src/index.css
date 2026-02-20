@@ -593,6 +593,12 @@ p {
   border: 1px solid rgba(244, 67, 54, 0.2);
 }
 
+.status-msg.info {
+  background: rgba(255, 255, 255, 0.05);
+  color: #b1afaf;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
 /* Breakpoints */
 @media (min-width: 640px) {
   #navthing {

@@ -28,23 +28,43 @@ const ContactUs = () => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         if (parseInt(userCaptcha) !== captcha.a) {
-            setStatus('Incorrect captcha. Please try again.');
+            setStatus('error:Incorrect captcha. Please try again.');
             generateCaptcha();
             return;
         }
 
-        const subject = encodeURIComponent(`Inquiry from ${formData.name}`);
-        const body = encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`);
-        const mailtoUrl = `mailto:codex@woxsen.edu.in?subject=${subject}&body=${body}`;
+        setStatus('Sending...');
 
-        window.location.href = mailtoUrl;
+        try {
+            const response = await fetch("https://formsubmit.co/ajax/codex@woxsen.edu.in", {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    name: formData.name,
+                    email: formData.email,
+                    message: formData.message,
+                    _subject: `New Inquiry from ${formData.name}`
+                })
+            });
 
-        setStatus('Opening email client...');
-        setFormData({ name: '', email: '', message: '' });
-        generateCaptcha();
+            if (response.ok) {
+                setStatus('success:Message sent successfully! We will get back to you soon.');
+                setFormData({ name: '', email: '', message: '' });
+                setUserCaptcha('');
+                generateCaptcha();
+            } else {
+                setStatus('error:Failed to send message. Please try again later.');
+            }
+        } catch (error) {
+            console.error("Submission error:", error);
+            setStatus('error:An error occurred. Please check your connection and try again.');
+        }
     };
 
     return (
@@ -107,7 +127,11 @@ const ContactUs = () => {
                     <button type="submit" className="submit-btn">
                         Send Message
                     </button>
-                    {status && <div className={`status-msg ${status.includes('success') ? 'success' : 'error'}`}>{status}</div>}
+                    {status && (
+                        <div className={`status-msg ${status.includes(':') ? status.split(':')[0] : 'info'}`}>
+                            {status.includes(':') ? status.split(':')[1] : status}
+                        </div>
+                    )}
                 </form>
             </div>
         </section>
