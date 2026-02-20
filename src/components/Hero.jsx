@@ -48,7 +48,7 @@ const Hero = ({ isLanding, onClick }) => {
                         pointerEvents: isLanding ? 'none' : 'auto'
                     }}
                 >
-                    Code<span style={{ color: '#d20000' }}>{'{'}</span>x<span style={{ color: '#d20000' }}>{'}'}</span>
+                    Code<span style={{ color: '#d20000' }}>{'{x}'}</span>
                 </h1>
 
                 <div
@@ -72,7 +72,8 @@ const Hero = ({ isLanding, onClick }) => {
                     className={`hero-content ${!isLanding ? 'all-decoded' : ''}`}
                     style={{
                         marginTop: isLanding ? '0' : '1rem',
-                        transition: 'margin-top 0.8s ease-out'
+                        transition: 'margin-top 0.8s ease-out',
+                        animation: 'fadeInSlow 2s ease-out forwards'
                     }}
                 >
                     <DecryptedText

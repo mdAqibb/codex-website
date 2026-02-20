@@ -608,7 +608,7 @@ p {
   }
 }
 
-@media (min-width: 768px) {
+<<<<<<< HEAD @media (min-width: 768px) {
   #navthing {
     padding: 1rem 1.5rem;
   }
@@ -707,35 +707,6 @@ p {
   }
 }
 
-/* Adjust Hero for fixed Navbar */
-.hero {
-  padding-top: 80px;
-}
-
-/* Parallax Effect Layers */
-.hero,
-.section,
-.footer-main {
-  position: relative;
-  z-index: 2;
-  transform: translate(calc((var(--mouse-x, 50vw) - 50vw) * 0.01), calc((var(--mouse-y, 50vh) - 50vh) * 0.01));
-  transition: transform 0.1s ease-out;
-}
-
-body::before {
-  content: '';
-  position: fixed;
-  top: -10%;
-  left: -10%;
-  width: 120%;
-  height: 120%;
-  background: radial-gradient(circle at 50% 50%, #1a1a1a 0%, #141414 100%);
-  z-index: -2;
-  transform: translate(calc((var(--mouse-x, 50vw) - 50vw) * -0.02), calc((var(--mouse-y, 50vh) - 50vh) * -0.02));
-  transition: transform 0.1s ease-out;
-  pointer-events: none;
-}
-
 @media (max-width: 767px) {
 
   .hero,
@@ -743,5 +714,15 @@ body::before {
   .footer-main,
   body::before {
     transform: none;
+  }
+}
+
+@keyframes fadeInSlow {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
   }
 }

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 
-const ParticleBackground = () => {
+const ParticleBackground = ({ isVisible }) => {
     const canvasRef = useRef(null);
 
     useEffect(() => {
@@ -120,7 +120,8 @@ const ParticleBackground = () => {
                 height: '100vh',
                 zIndex: -1,
                 pointerEvents: 'none',
-                opacity: 0.8
+                opacity: isVisible ? 0.6 : 0,
+                transition: 'opacity 1s ease-in-out'
             }}
         />
     );

@@ -55,7 +55,6 @@ const Navbar = () => {
                 <li><a href="#about" onClick={handleLinkClick}><span className="opening_flower">{`{`}</span> ABOUT <span className="closing_flower">{`}`}</span></a></li>
                 <li><a href="#team" onClick={handleLinkClick}><span className="opening_flower">{`{`}</span> TEAM <span className="closing_flower">{`}`}</span></a></li>
                 <li><a href="#events" onClick={handleLinkClick}><span className="opening_flower">{`{`}</span> EVENTS <span className="closing_flower">{`}`}</span></a></li>
-                <li><a href="#projects" onClick={handleLinkClick}><span className="opening_flower">{`{`}</span> PROJECTS <span className="closing_flower">{`}`}</span></a></li>
                 <li><a href="#contact" onClick={handleLinkClick}><span className="opening_flower">{`{`}</span> CONTACT US <span className="closing_flower">{`}`}</span></a></li>
             </ul>
         </nav>

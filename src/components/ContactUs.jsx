@@ -35,9 +35,14 @@ const ContactUs = () => {
             generateCaptcha();
             return;
         }
-        // In a real app, you'd send this to a backend
-        console.log('Form submitted:', formData);
-        setStatus('Message sent successfully!');
+
+        const subject = encodeURIComponent(`Inquiry from ${formData.name}`);
+        const body = encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`);
+        const mailtoUrl = `mailto:codex@woxsen.edu.in?subject=${subject}&body=${body}`;
+
+        window.location.href = mailtoUrl;
+
+        setStatus('Opening email client...');
         setFormData({ name: '', email: '', message: '' });
         generateCaptcha();
     };
