@@ -3,9 +3,9 @@ import TeamCard from './TeamCard';
 
 const Team = () => {
     const coreMembers = [
-        { name: "Nitin", quote: "Inhale the good vibes, exhale the bad ones.", linkedin: "https://www.linkedin.com/in/nitin-dasari/", github: "https://github.com/nikky-767", image: "/assets/team/1core.JPG" },
+        { name: "Nitin", quote: "Building the logic today that automates the world of tomorrow.", linkedin: "https://www.linkedin.com/in/nitin-dasari/", github: "https://github.com/nikky-767", image: "/assets/team/1core.JPG" },
         { name: "Manish", quote: "I write code that writes outcomes.", linkedin: "https://www.linkedin.com/in/manishreddyvem/", github: "https://github.com/Vem-Manish", image: "/assets/team/2core.JPG" },
-        { name: "Hassan", quote: "My code works and breaks at the same time, like thd Schrödinger's Cat.", linkedin: "https://www.linkedin.com/in/shaik-hassan-572497328/", github: "https://github.com/Hassan-shaik", image: "/assets/team/3core.JPG" },
+        { name: "Hassan", quote: "My code works and breaks at the same time, like the Schrödinger's Cat.", linkedin: "https://www.linkedin.com/in/shaik-hassan-572497328/", github: "https://github.com/Hassan-shaik", image: "/assets/team/3core.JPG" },
         { name: "Deepti", quote: "I am trying (definitely not my best).", linkedin: "https://www.linkedin.com/in/deepti0the0goat", github: "https://github.com/AMK488", image: "/assets/team/4core.JPG" },
         { name: "Ganesh", quote: "I am still thinking about a catchphrase..", linkedin: "https://www.linkedin.com/in/sai-ganesha-munagari/", github: "https://github.com/gunsai75", image: "/assets/team/5core.JPG" },
         { name: "Sudarshan", quote: "Building intelligent systems. Breaking normal limits.", linkedin: "https://in.linkedin.com/in/sudarshanmaddi", github: "https://github.com/suddhumaddi", image: "/assets/team/6core.JPG" },
@@ -36,7 +36,7 @@ const Team = () => {
                     <div className="team-grid">
                         <TeamCard
                             name="Amogh Deshmukh"
-                            quote={"Assisstant Dean - School Of Technology, Woxsen Unviersity."}
+                            quote={"Assisstant Dean - School Of Technology, Woxsen Unvirsity."}
                             image="/assets/team/mentor.JPG"
                             linkedin="https://www.linkedin.com/in/dr-amogh-deshmukh-35009b17/?originalSubdomain=in"
                             github="https://github.com/amoghpesit"
