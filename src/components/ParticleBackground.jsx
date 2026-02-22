@@ -120,7 +120,7 @@ const ParticleBackground = ({ isVisible }) => {
                 height: '100vh',
                 zIndex: -1,
                 pointerEvents: 'none',
-                opacity: isVisible ? 0.65 : 0,
+                opacity: isVisible ? 0.8 : 0,
                 transition: 'opacity 1s ease-in-out'
             }}
         />
